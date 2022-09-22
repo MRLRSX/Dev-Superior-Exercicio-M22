@@ -36,7 +36,15 @@ public class Conexao {
 			throw new DBException(error.getMessage());
 		}
 	}
-
+	public static void closeConnection() {
+		if (conn != null) {
+			try {
+				conn.close();
+			} catch (SQLException e) {
+				throw new DBException(e.getMessage());
+			}
+		}
+	}
 	public static void closeStatement(Statement st) {
 		if (st != null) {
 			try {

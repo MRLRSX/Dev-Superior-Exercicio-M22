@@ -32,6 +32,7 @@ public class Program_01 {
 		} finally {
 			Conexao.closeStatement(preparedStatement);
 			Conexao.closeResultSet(resultSet);
+			Conexao.closeConnection();
 
 		}
 	}
